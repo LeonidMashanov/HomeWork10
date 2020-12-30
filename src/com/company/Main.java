@@ -35,7 +35,29 @@ public class Main {
             }
         }
     }
+    public static void sumMaxLineOfArray(int[][] arr) {
+        int tmp = 0;
+        int index = 0;
+        int maxSum = 0;
+        for (int i = 0; i < arr.length; i++) {
+            int sum = 0;
+            for (int j = 0; j < arr[i].length; j++) {
+                sum = sum + arr[i][j];
+                if (sum > maxSum) maxSum = sum;
+                else {
+                    maxSum = maxSum;
+                }
+            }
+            if (maxSum > sum) {
+                if (maxSum > sum && tmp != maxSum) {
+                    index = i - 1;
+                    tmp = maxSum;
+                }
+            }
+        }
+        System.out.println(Arrays.toString(arr[index]));
 
+    }
     public static void main(String[] args) {
         int[][] array = new int[4][4];
 
